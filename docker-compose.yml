@@ -1,0 +1,43 @@
+services:
+  api:
+    build: ./backend
+    ports: ["3000:3000"]
+    environment:
+      PGHOST: db
+      PGPORT: 5432
+      PGUSER: sv
+      PGPASSWORD: svpass
+      PGDATABASE: svdb
+      DATA_DIR: /data
+      MAIL_FROM: "no-reply@seguridadvial.local"
+      SMTP_HOST: smtp
+      SMTP_PORT: 1025
+      SMTP_SECURE: "false"
+      NOTIF_DEBUG_GRID: "false"
+    depends_on: [db, smtp]
+    volumes:
+      - ./data:/data
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: sv
+      POSTGRES_PASSWORD: svpass
+      POSTGRES_DB: svdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  smtp:
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"   # UI de MailHog
+      - "1025:1025"   # puerto SMTP
+
+  web:
+    build: ./frontend
+    depends_on: [api]
+    ports:
+      - "8080:80"
+
+volumes:
+  pgdata:

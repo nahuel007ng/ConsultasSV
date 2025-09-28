@@ -1,0 +1,24 @@
+export type InfraccionView = {
+  id: number;
+  nro_acta: string;
+  serie: string;
+  nro_correlativo: number;
+  dominio: string;
+  fecha_labrado: string;
+  velocidad_medida: number | null;
+  velocidad_autorizada: number;
+  ubicacion_texto: string;
+  lat: number | null;
+  lng: number | null;
+  foto_file_id: string | null;
+  cam_serie: string | null;
+  tipo_vehiculo: string | null;
+  vehiculo_marca: string | null;
+  vehiculo_modelo: string | null;
+  estado: string;
+  fecha_carga: string;
+  notificado: boolean;
+  fecha_notificacion: string | null;
+  titular_nombre?: string | null;
+  titular_dni?: string | null;
+};

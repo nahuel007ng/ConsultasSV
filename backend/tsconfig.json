@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",        // <--- volver a "src"
+    "outDir": "dist",
+    "module": "ES2022",
+    "target": "ES2022",
+    "moduleResolution": "Node",
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]     // <--- ya no listamos "scripts/**/*" fuera de src
+}

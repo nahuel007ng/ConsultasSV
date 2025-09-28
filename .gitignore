@@ -1,0 +1,25 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.code-workspace
+
+# Root data (runtime)
+pgdata/
+data/
+
+# Node / build
+node_modules/
+dist/
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env (si en el futuro usás archivos .env)
+.env
+.env.*
+*.env

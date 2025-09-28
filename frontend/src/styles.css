@@ -1,0 +1,30 @@
+/* Color celeste reutilizable */
+:root { --accent: #40aaf8; }
+
+/* Barra horizontal superior */
+.xscroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 12px;             /* solo la barra */
+  scrollbar-width: thin;    /* Firefox */
+  scrollbar-color: var(--accent) transparent; /* Firefox */
+  border-radius: 8px;
+  background: transparent;
+}
+
+/* WebKit (Chromium / Safari / Edge) */
+.xscroll::-webkit-scrollbar { height: 10px; }
+.xscroll::-webkit-scrollbar-track {
+  background: rgba(64,170,248,0.15);
+  border-radius: 8px;
+}
+.xscroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+}
+.xscroll::-webkit-scrollbar-thumb:hover { background: #2f98e7; }
+
+/* El contenedor de la tabla no muestra barra inferior */
+.table-wrap {
+  overflow-x: hidden; /* ocultamos la barra nativa de abajo */
+}
